@@ -9,10 +9,9 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "auth0-js": "^9.7.3",
     "axios": "^0.18.0",
     "lodash": "^4.17.10",
-    "npm": "^6.3.0",
+    "npm": "^6.4.1",
     "vue": "^2.5.16",
     "vue-axios": "^2.1.2",
     "vue-router": "^3.0.1",
