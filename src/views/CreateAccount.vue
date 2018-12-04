@@ -13,17 +13,17 @@
       <div id="form" v-if="store.hasAccessCode !== null">
         <template v-if="store.hasAccessCode">
           <div class="changeHasAccessCode" @click="handleHasAccessCode(false)">Dont have an access code? Click here to continue creating a new account.</div>
-          <input class="fullWidth" type="text" placeholder="Access Code" />
+          <input class="fullWidth" type="text" placeholder="Access Code" v-model="accessCode"/>
         </template>
         <template v-else>
           <div class="changeHasAccessCode" @click="handleHasAccessCode(true)">Have an access code? Click here to continue with an access code.</div>
         </template>
-        <input class="halfWidth" type="text" placeholder="First Name" />
-        <input class="halfWidth" type="text" placeholder="Last Name" />
-        <input class="fullWidth" type="text" placeholder="Email" />
-        <input class="fullWidth" type="text" placeholder="Confirm Email" />
-        <input class="fullWidth" type="text" placeholder="Password" />
-        <input class="fullWidth" type="text" placeholder="Confirm Password" />
+        <input class="halfWidth" type="text" placeholder="First Name" v-model="firstName"/>
+        <input class="halfWidth" type="text" placeholder="Last Name" v-model="lastName"/>
+        <input class="fullWidth" type="text" placeholder="Email" v-model="email"/>
+        <input class="fullWidth" type="text" placeholder="Confirm Email" v-model="emailConfirm"/>
+        <input class="fullWidth" type="password" placeholder="Password" v-model="password"/>
+        <input class="fullWidth" type="password" placeholder="Confirm Password" v-model="passwordConfirm"/>
       </div>
     </div>
   </div>
@@ -41,10 +41,66 @@ export default {
     store(){
       return this.$store.state.store.state;
     },
+    accessCode: {
+      get(){
+        return this.store.accessCode
+      },
+      set(value){
+        this.handleAccessCode(value);
+      }
+    },
+    firstName: {
+      get(){
+        return this.store.firstName
+      },
+      set(value){
+        this.handleFirstName(value);
+      }
+    },
+    lastName: {
+      get(){
+        return this.store.lastName
+      },
+      set(value){
+        this.handleLastName(value);
+      }
+    },
+    email: {
+      get(){
+        return this.store.email
+      },
+      set(value){
+        this.handleEmail(value);
+      }
+    },
+    emailConfirm: {
+      get(){
+        return this.store.emailConfirm
+      },
+      set(value){
+        this.handleEmailConfirm(value);
+      }
+    },
+    password: {
+      get(){
+        return this.store.password
+      },
+      set(value){
+        this.handlePassword(value);
+      }
+    },
+    passwordConfirm: {
+      get(){
+        return this.store.passwordConfirm
+      },
+      set(value){
+        this.handlePasswordConfirm(value);
+      }
+    }
   },
   methods: {
     ...mapActions(
-      'module', ['handleHasAccessCode']
+      'module', ['handleHasAccessCode', 'handleAccessCode', 'handleFirstName', 'handleLastName', 'handleEmail', 'handleEmailConfirm', 'handlePassword', 'handlePasswordConfirm']
     ),
   }
 }
