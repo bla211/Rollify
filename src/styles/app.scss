@@ -14,5 +14,26 @@ $lightest-blue: #BBDEFB;
 $light-blue: #64B5F6;
 $med-blue: #1976d2;
 
-
 @import 'settings';
+.fullWidth{
+    width: 100%;
+}
+.halfWidth{
+    width: 48%;
+}
+%input{
+    @include appearance(none);
+    border: none;
+    padding: 10px 14px;
+    margin: 0 0 14px 0;
+    outline: none;
+    font-family: $font-family;
+    background: #F3F3F3;
+    @include placeholder{
+        @include appearance(none);
+        font-family: $font-family;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #7B8D93;
+    }
+}
