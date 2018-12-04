@@ -11,7 +11,13 @@
         </div>
       </div>
       <div id="form" v-if="store.hasAccessCode !== null">
-        <input v-if="store.hasAccessCode" class="fullWidth" type="text" placeholder="Access Code" />
+        <template v-if="store.hasAccessCode">
+          <div class="changeHasAccessCode" @click="handleHasAccessCode(false)">Dont have an access code? Click here to continue creating a new account.</div>
+          <input class="fullWidth" type="text" placeholder="Access Code" />
+        </template>
+        <template v-else>
+          <div class="changeHasAccessCode" @click="handleHasAccessCode(true)">Have an access code? Click here to continue with an access code.</div>
+        </template>
         <input class="halfWidth" type="text" placeholder="First Name" />
         <input class="halfWidth" type="text" placeholder="Last Name" />
         <input class="fullWidth" type="text" placeholder="Email" />
@@ -101,7 +107,15 @@ export default {
     max-width: 374px;
     display: flex;
     flex-flow:row wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
+    .changeHasAccessCode{
+      font-size: 1.0rem;
+      margin: 0 0 6px 0;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
   input{
     @extend %input;
