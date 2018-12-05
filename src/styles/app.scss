@@ -1,3 +1,5 @@
+$rollify-blue: #0B9EDA;
+
 $grey-0: #FAFAFA;
 $grey-1: #F5F5F5;
 $grey-2: #EEEEEE;
@@ -20,6 +22,12 @@ $med-blue: #1976d2;
 }
 .halfWidth{
     width: 48%;
+}
+.thirdWidth{
+    width: 32%;
+}
+.twoThirdsWidth{
+    width: 66%;
 }
 %input{
     @include appearance(none);

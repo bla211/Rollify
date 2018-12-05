@@ -111,7 +111,6 @@ export default {
   button{
     @include appearance(none);
     border: none;
-    padding: 10px 14px;
     margin: 30px 0 14px 0;
     background: #7B8D93;
     color: #FFFFFF;

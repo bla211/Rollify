@@ -18,12 +18,16 @@
         <template v-else>
           <div class="changeHasAccessCode" @click="handleHasAccessCode(true)">Have an access code? Click here to continue with an access code.</div>
         </template>
-        <input class="halfWidth" type="text" placeholder="First Name" v-model="firstName"/>
-        <input class="halfWidth" type="text" placeholder="Last Name" v-model="lastName"/>
+        <div class="halfWidthWrapper">
+          <input class="halfWidth" type="text" placeholder="First Name" v-model="firstName"/>
+          <input class="halfWidth" type="text" placeholder="Last Name" v-model="lastName"/>
+        </div>
         <input class="fullWidth" type="text" placeholder="Email" v-model="email"/>
         <input class="fullWidth" type="text" placeholder="Confirm Email" v-model="emailConfirm"/>
         <input class="fullWidth" type="password" placeholder="Password" v-model="password"/>
         <input class="fullWidth" type="password" placeholder="Confirm Password" v-model="passwordConfirm"/>
+        <div class="disclaimer">By proceeding, you agree with our Terms of Service &amp; Privacy Policy</div>
+        <router-link to="personal-data"><button>Sign Up</button></router-link>
       </div>
     </div>
   </div>
@@ -135,6 +139,7 @@ export default {
   font-family: $font-family;
   #createAccount__form--accessCodeCheck{
     width: 100%;
+    max-width: 1100px;
     display: flex;
     flex-flow:row wrap;
     justify-content: space-around; 
@@ -160,21 +165,62 @@ export default {
   } 
   #form{
     width: 100%;
-    max-width: 374px;
+    max-width: 420px;
     display: flex;
     flex-flow:row wrap;
-    justify-content: space-between;
+    justify-content: center;
     .changeHasAccessCode{
       font-size: 1.0rem;
       margin: 0 0 6px 0;
+      cursor: pointer;
+      width: 100%;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .halfWidthWrapper{
+      display: flex;
+      flex-flow:row wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+    input{
+      @extend %input;
+    } 
+    .disclaimer{
+      width: 100%;
+      font-family: $font-family;
+      font-size: 1.3rem;
+      color: #7B8D93;
+      font-weight: 500;
+      margin: 30px 0 0 0;
+      text-align: center;
       cursor: pointer;
       &:hover{
         text-decoration: underline;
       }
     }
-  }
-  input{
-    @extend %input;
+    a{
+      width: 100%;
+    }
+    button{
+      @include appearance(none);
+      border: none;
+      background: $rollify-blue;
+      color: #FFFFFF;
+      font-family: $font-family;
+      font-size: 1.3rem;
+      padding: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 20px 0 0 0;
+      width: 100%;
+      cursor: pointer;
+      @include transition(opacity .1s ease-in-out);
+      &:hover{
+        opacity: .75;
+      }
+    }
   }
 }
 
