@@ -9,7 +9,7 @@
             <input type="text" v-model="planSponsor" placeholder="Plan Sponsor"/>
           </div>
           <div class="inputLabelWrapper twoThirdsWidth">
-            <label v-if="store.planName != null">Plan Name</label>           
+            <label v-if="store.planInfo.planName != null">Plan Name</label>           
             <input type="text" v-model="planName" placeholder="Plan Name"/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
@@ -87,11 +87,19 @@ export default {
       set(value){
         this.handlePlanSponsor(value);
       }
+    },
+    planName: {
+      get(){
+        return this.store.planInfo.planName
+      },
+      set(value){
+        this.handlePlanName(value);
+      }
     }
   },
   methods: {
     ...mapActions(
-      'module', ['handlePlanSponsor']
+      'module', ['handlePlanSponsor', 'handlePlanName']
     ),
   }
 }
@@ -155,6 +163,7 @@ export default {
         background: transparent;
         width: 100%;
         font-size: 1.4rem;
+        color: $grey-9;
         @include placeholder{
           @include appearance(none);
           font-family: $font-family;

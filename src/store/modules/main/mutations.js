@@ -25,5 +25,8 @@ export default{
     },
     UPDATE_PLAN_SPONSOR: (state, payload) => {
         state.planInfo.planSponsor = payload;
+    },
+    UPDATE_PLAN_NAME: (state, payload) => {
+        state.planInfo.planName = payload;
     }
 }

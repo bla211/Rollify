@@ -8,6 +8,7 @@ export default{
     password: null,
     passwordConfirm: null,
     planInfo: {
-        planSponsor: null
+        planSponsor: null,
+        planName: null
     }
 };

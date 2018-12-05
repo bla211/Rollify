@@ -27,5 +27,8 @@ export default{
     },
     handlePlanSponsor: (context, payload) => {
         context.commit('UPDATE_PLAN_SPONSOR', payload);
+    },
+    handlePlanName: (context, payload) => {
+        context.commit('UPDATE_PLAN_NAME', payload);
     }
 }
