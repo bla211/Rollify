@@ -18,7 +18,7 @@
         <template v-else>
           <div class="changeHasAccessCode" @click="handleHasAccessCode(true)">Have an access code? Click here to continue with an access code.</div>
         </template>
-        <div class="halfWidthWrapper">
+        <div class="multipleInputWrap">
           <input class="halfWidth" type="text" placeholder="First Name" v-model="firstName"/>
           <input class="halfWidth" type="text" placeholder="Last Name" v-model="lastName"/>
         </div>

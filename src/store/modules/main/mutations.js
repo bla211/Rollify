@@ -23,4 +23,7 @@ export default{
     UPDATE_PASSWORD_CONFIRM: (state, payload) => {
         state.passwordConfirm = payload;
     },
+    UPDATE_PLAN_SPONSOR: (state, payload) => {
+        state.planInfo.planSponsor = payload;
+    }
 }

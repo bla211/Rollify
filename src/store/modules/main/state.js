@@ -7,4 +7,7 @@ export default{
     emailConfirm: null,
     password: null,
     passwordConfirm: null,
+    planInfo: {
+        planSponsor: null
+    }
 };

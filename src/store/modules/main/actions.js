@@ -24,5 +24,8 @@ export default{
     },
     handlePasswordConfirm: (context, payload) => {
         context.commit('UPDATE_PASSWORD_CONFIRM', payload);
+    },
+    handlePlanSponsor: (context, payload) => {
+        context.commit('UPDATE_PLAN_SPONSOR', payload);
     }
 }

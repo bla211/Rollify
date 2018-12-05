@@ -3,13 +3,13 @@
     <h1>Hi {{store.firstName}}! Please confirm some personal info for us.</h1>
     <div id="personalInfo__form">
       <div id="form">
-        <div class="halfWidthWrapper">
+        <div class="multipleInputWrap">
           <input class="thirdWidth" type="text" placeholder="First Name" v-model="firstName"/> 
           <input class="thirdWidth" type="text" placeholder="Middle Name" v-model="middleName"/>
           <input class="thirdWidth" type="text" placeholder="Last Name" v-model="lastName"/>     
           <input class="twoThirdsWidth" type="text" placeholder="Email" v-model="email"/>
         </div>
-        <div class="halfWidthWrapper" id="address">        
+        <div class="multipleInputWrap" id="personalInfo__form--address">        
           <input class="fullWidth" type="text" placeholder="Mailing Address" v-model="mailingAddress"/>
           <input class="fullWidth" type="text" placeholder="Mailing Address 2" v-model="mailingAddress2"/>
           <input class="thirdWidth" type="text" placeholder="City" v-model="city"/>
@@ -17,7 +17,7 @@
           <input class="thirdWidth" type="text" placeholder="Zip Code" v-model="zipCode"/>
           <input class="twoThirdsWidth" type="text" placeholder="Phone Number" v-model="phoneNumber"/>      
         </div>
-        <router-link to="personal-data"><button>Continue</button></router-link>
+        <router-link to="origin-plan"><button>Continue</button></router-link>
       </div>
     </div>
   </div>
@@ -124,8 +124,8 @@ export default {
       justify-content: space-between;
       width: 100%;
     }
-    #address{
-      margin-top: 20px;
+    #personalInfo__form--address{
+      margin-top: 30px;
     }
     input{
       @extend %input;

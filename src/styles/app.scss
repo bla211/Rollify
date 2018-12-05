@@ -17,11 +17,19 @@ $light-blue: #64B5F6;
 $med-blue: #1976d2;
 
 @import 'settings';
+
+
+.multipleInputWrap{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
 .fullWidth{
     width: 100%;
 }
 .halfWidth{
-    width: 48%;
+    width: 49%;
 }
 .thirdWidth{
     width: 32%;
@@ -43,5 +51,6 @@ $med-blue: #1976d2;
         font-size: 1.4rem;
         font-weight: 500;
         color: #7B8D93;
+        opacity: .5;
     }
 }
