@@ -1,7 +1,7 @@
 <template>
   <div id="progressBar">
     <div id="progressBar__bar">
-      <div :class="['progressBar__bar--dot', (progress > -1) ? 'active' : '']"></div>
+      <router-link to="origin-plan"><div :class="['progressBar__bar--dot', (progress > -1) ? 'active' : '']"></div></router-link>
       <div :class="['progressBar__bar--line', (progress > 0) ? 'active' : '']"></div>
       <div :class="['progressBar__bar--dot', (progress > 0) ? 'active' : '']"></div>
       <div :class="['progressBar__bar--line', (progress > 1) ? 'active' : '']"></div>

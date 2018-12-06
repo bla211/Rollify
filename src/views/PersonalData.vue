@@ -103,6 +103,7 @@ export default {
   flex-flow:row wrap;
   justify-content: center; 
   font-family: $font-family;
+  padding: 0 0 100px 0;
   #form{
     width: 100%;
     max-width: 600px;
@@ -144,7 +145,14 @@ export default {
       }
     }
     a{
+      position: fixed;
+      bottom: 0;
       width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      text-decoration: none;
+      padding: 10px 20px;
+      background: $grey-0;
     }
     button{
       @include appearance(none);
@@ -156,8 +164,6 @@ export default {
       padding: 16px;
       text-transform: uppercase;
       font-weight: 500;
-      margin: 20px 0 0 0;
-      width: 100%;
       cursor: pointer;
       border-radius: 4px;
       @include transition(opacity .1s ease-in-out);

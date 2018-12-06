@@ -4,6 +4,7 @@ import Login from './views/Login.vue'
 import CreateAccount from './views/CreateAccount.vue'
 import PersonalData from './views/PersonalData.vue'
 import OriginPlan from './views/OriginPlan.vue'
+import SearchDestinationPlan from './views/SearchDestinationPlan.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/origin-plan',
       name: 'origin-plan',
       component: OriginPlan
+    },
+    {
+      path: '/search-destination-plan',
+      name: 'search-destination-plan',
+      component: SearchDestinationPlan
     },
   ]
 })

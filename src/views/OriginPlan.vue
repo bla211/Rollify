@@ -1,7 +1,7 @@
 <template>
   <div id="originPlan">
     <ProgressBar progress="0"/>
-    <h1>We're excited about your new endeavor.<br>Please confirm we have corretcly captured your retirement fund data.</h1>
+    <h1>We're excited about your new endeavor.<br>Please confirm we have correctly captured your retirement fund data.</h1>
     <div id="originPlan__form">
       <div id="form">
         <div class="multipleInputWrap">
@@ -64,6 +64,7 @@
             <input type="text" v-model="phoneNumber" placeholder="Phone Number"/>
           </div>
         </div>
+        <router-link to="search-destination-plan"><button>Select Destination Plan</button></router-link>
       </div>
     </div>
   </div>
@@ -117,6 +118,7 @@ export default {
   justify-content: center;
   align-content: flex-start;
   width: 100%;
+  padding: 0 0 100px 0;
   h1{
     flex-basis: 100%;
     margin-top: 40px;
@@ -191,7 +193,14 @@ export default {
       }
     }
     a{
+      position: fixed;
+      bottom: 0;
       width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      text-decoration: none;
+      padding: 10px 20px;
+      background: $grey-0;
     }
     button{
       @include appearance(none);
@@ -203,9 +212,8 @@ export default {
       padding: 16px;
       text-transform: uppercase;
       font-weight: 500;
-      margin: 20px 0 0 0;
-      width: 100%;
       cursor: pointer;
+      border-radius: 4px;
       @include transition(opacity .1s ease-in-out);
       &:hover{
         opacity: .75;
