@@ -1,14 +1,24 @@
 export default{
     hasAccessCode: null,
-    accessCode: null,
-    firstName: null,
-    lastName: null,
-    email: null,
-    emailConfirm: null,
-    password: null,
-    passwordConfirm: null,
+    accessCode: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    emailConfirm: '',
+    password: '',
+    passwordConfirm: '',
     planInfo: {
-        planSponsor: null,
-        planName: null
-    }
+        sponsor: '',
+        name: '',
+        accountNumber: '',
+        affiliateNumber: '',
+        division: ''
+    },
+    socialSecurityNumber: '',
+    mailingAddress: '',
+    mailingAddress2: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    phoneNumber: ''
 };

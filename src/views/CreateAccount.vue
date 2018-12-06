@@ -216,6 +216,7 @@ export default {
       margin: 20px 0 0 0;
       width: 100%;
       cursor: pointer;
+      border-radius: 4px;
       @include transition(opacity .1s ease-in-out);
       &:hover{
         opacity: .75;

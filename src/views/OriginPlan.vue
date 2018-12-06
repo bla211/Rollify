@@ -1,66 +1,67 @@
 <template>
   <div id="originPlan">
+    <ProgressBar progress="0"/>
     <h1>We're excited about your new endeavor.<br>Please confirm we have corretcly captured your retirement fund data.</h1>
     <div id="originPlan__form">
       <div id="form">
         <div class="multipleInputWrap">
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.planInfo.planSponsor != null">Plan Sponsor</label>
+            <label v-if="store.planInfo.sponsor.length">Plan Sponsor</label>
             <input type="text" v-model="planSponsor" placeholder="Plan Sponsor"/>
           </div>
           <div class="inputLabelWrapper twoThirdsWidth">
-            <label v-if="store.planInfo.planName != null">Plan Name</label>           
+            <label v-if="store.planInfo.name.length">Plan Name</label>           
             <input type="text" v-model="planName" placeholder="Plan Name"/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.planAccountNumber != null">Plan Account No.</label>           
+            <label v-if="store.planInfo.accountNumber.length">Plan Account No.</label>           
             <input type="text" v-model="planAccountNumber" placeholder="Plan Account No."/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.afiliateNo != null">Affiliate No.</label>           
-            <input type="text" v-model="afiliateNo" placeholder="Affiliate No."/>
+            <label v-if="store.planInfo.affiliateNumber.length">Affiliate No.</label>           
+            <input type="text" v-model="affiliateNo" placeholder="Affiliate No."/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.division != null">Division</label>           
+            <label v-if="store.planInfo.division.length">Division</label>           
             <input type="text" v-model="division" placeholder="Division"/>
           </div>       
         </div>
         <div id="originPlan__form--personalInfo" class="multipleInputWrap">
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.socialSecurity != null">Social Security No.</label>           
+            <label v-if="store.socialSecurityNumber.length">Social Security No.</label>           
             <input type="text" v-model="socialSecurity" placeholder="Social Security No."/>
           </div>
           <div class="inputLabelWrapper twoThirdsWidth">
-            <label v-if="store.firstAndLast != null">First and Last Name</label>           
+            <label v-if="false">First and Last Name</label>           
             <input type="text" v-model="firstAndLast" placeholder="First and Last Name"/>
           </div>
           <div class="inputLabelWrapper halfWidth">
-            <label v-if="store.mailingAddress != null">Mailing Address</label>           
+            <label v-if="store.mailingAddress.length">Mailing Address</label>           
             <input type="text" v-model="mailingAddress" placeholder="Mailing Address"/>
           </div>
           <div class="inputLabelWrapper halfWidth">
-            <label v-if="store.mailingAddress2 != null">Mailing Address 2</label>           
+            <label v-if="store.mailingAddress2.length">Mailing Address 2</label>           
             <input type="text" v-model="mailingAddress2" placeholder="Mailing Address 2"/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.city != null">City</label>           
+            <label v-if="store.city.length">City</label>           
             <input type="text" v-model="city" placeholder="City"/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.state != null">State</label>           
+            <label v-if="store.state.length">State</label>           
             <input type="text" v-model="state" placeholder="State"/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.zipCode != null">Zip Code</label>           
+            <label v-if="store.zipCode.length">Zip Code</label>           
             <input type="text" v-model="zipCode" placeholder="Zip Code"/>
           </div>
           <div class="inputLabelWrapper halfWidth">
-            <label v-if="store.email != null">Email</label>           
+            <label v-if="store.email.length">Email</label>           
             <input type="text" v-model="email" placeholder="Email"/>
           </div>
           <div class="inputLabelWrapper halfWidth">
-            <label v-if="store.division != null">Phone Number</label>           
-            <input type="text" v-model="phoneNumber"/>
+            <label v-if="store.phoneNumber !== ''">Phone Number</label>           
+            <input type="text" v-model="phoneNumber" placeholder="Phone Number"/>
           </div>
         </div>
       </div>
@@ -71,8 +72,10 @@
 <script>
 import { mapActions } from 'vuex';
 
+import ProgressBar from '@/components/SignUp/ProgressBar.vue';
 export default {
   components: {
+    ProgressBar
   },
   created(){
   },
@@ -82,7 +85,7 @@ export default {
     },
     planSponsor: {
       get(){
-        return this.store.planInfo.planSponsor
+        return this.store.planInfo.sponsor
       },
       set(value){
         this.handlePlanSponsor(value);
@@ -90,7 +93,7 @@ export default {
     },
     planName: {
       get(){
-        return this.store.planInfo.planName
+        return this.store.planInfo.name
       },
       set(value){
         this.handlePlanName(value);

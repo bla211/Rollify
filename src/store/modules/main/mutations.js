@@ -24,9 +24,9 @@ export default{
         state.passwordConfirm = payload;
     },
     UPDATE_PLAN_SPONSOR: (state, payload) => {
-        state.planInfo.planSponsor = payload;
+        state.planInfo.sponsor = payload;
     },
     UPDATE_PLAN_NAME: (state, payload) => {
-        state.planInfo.planName = payload;
+        state.planInfo.name = payload;
     }
 }
