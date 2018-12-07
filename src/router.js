@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Login from './views/Login.vue'
 import CreateAccount from './views/CreateAccount.vue'
 import PersonalData from './views/PersonalData.vue'
-import OriginPlan from './views/OriginPlan.vue'
+import ConfirmOriginPlan from './views/ConfirmOriginPlan.vue'
 import SearchDestinationPlan from './views/SearchDestinationPlan.vue'
 import ConfirmDestinationPlan from './views/ConfirmDestinationPlan.vue'
 
@@ -28,9 +28,9 @@ export default new Router({
       component: PersonalData
     },
     {
-      path: '/origin-plan',
-      name: 'origin-plan',
-      component: OriginPlan
+      path: '/confirm-origin-plan',
+      name: 'confirmorigin-plan',
+      component: ConfirmOriginPlan
     },
     {
       path: '/search-destination-plan',

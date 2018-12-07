@@ -17,7 +17,7 @@
           <input class="thirdWidth" type="text" placeholder="Zip Code" v-model="zipCode"/>
           <input class="twoThirdsWidth" type="text" placeholder="Phone Number" v-model="phoneNumber"/>      
         </div>
-        <router-link to="origin-plan"><button>Continue</button></router-link>
+        <router-link to="confirm-origin-plan"><button>Continue</button></router-link>
       </div>
     </div>
   </div>
