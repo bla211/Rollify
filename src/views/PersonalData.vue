@@ -67,10 +67,58 @@ export default {
         this.handleEmail(value);
       }
     },
+    mailingAddress: {
+      get(){
+        return this.store.mailingAddress
+      },
+      set(value){
+        this.handleMailingAddress(value);
+      }
+    },
+    mailingAddress2: {
+      get(){
+        return this.store.mailingAddress2
+      },
+      set(value){
+        this.handleMailingAddress2(value);
+      }
+    },
+    city: {
+      get(){
+        return this.store.city
+      },
+      set(value){
+        this.handleCity(value);
+      }
+    },
+    state: {
+      get(){
+        return this.store.state
+      },
+      set(value){
+        this.handleState(value);
+      }
+    },
+    zipCode: {
+      get(){
+        return this.store.zipCode
+      },
+      set(value){
+        this.handleZipCode(value);
+      }
+    },
+    phoneNumber: {
+      get(){
+        return this.store.phoneNumber
+      },
+      set(value){
+        this.handlePhoneNumber(value);
+      }
+    },
   },
   methods: {
     ...mapActions(
-      'module', ['handleFirstName', 'handleMiddleName', 'handleLastName', 'handleEmail']
+      'module', ['handleFirstName', 'handleMiddleName', 'handleLastName', 'handleEmail', 'handleMailingAddress', 'handleMailingAddress2', 'handleCity', 'handleState', 'handleZipCode', 'handlePhoneNumber']
     ),
   }
 }

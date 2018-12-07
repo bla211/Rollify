@@ -173,6 +173,8 @@ export default {
   font-family: $font-family;
   color: $grey-6;
   padding: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 a{

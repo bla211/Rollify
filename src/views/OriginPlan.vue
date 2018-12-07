@@ -6,24 +6,24 @@
       <div id="form">
         <div class="multipleInputWrap">
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.planInfo.sponsor.length">Plan Sponsor</label>
-            <input type="text" v-model="planSponsor" placeholder="Plan Sponsor"/>
+            <label v-if="store.originPlanInfo.sponsor.length">Plan Sponsor</label>
+            <input type="text" v-model="originPlanSponsor" placeholder="Plan Sponsor"/>
           </div>
           <div class="inputLabelWrapper twoThirdsWidth">
-            <label v-if="store.planInfo.name.length">Plan Name</label>           
-            <input type="text" v-model="planName" placeholder="Plan Name"/>
+            <label v-if="store.originPlanInfo.name.length">Plan Name</label>           
+            <input type="text" v-model="originPlanName" placeholder="Plan Name"/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.planInfo.accountNumber.length">Plan Account No.</label>           
-            <input type="text" v-model="planAccountNumber" placeholder="Plan Account No."/>
+            <label v-if="store.originPlanInfo.accountNumber.length">Plan Account No.</label>           
+            <input type="text" v-model="OriginPlanAccountNumber" placeholder="Plan Account No."/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.planInfo.affiliateNumber.length">Affiliate No.</label>           
-            <input type="text" v-model="affiliateNo" placeholder="Affiliate No."/>
+            <label v-if="store.originPlanInfo.affiliateNumber.length">Affiliate No.</label>           
+            <input type="text" v-model="OriginPlanAffiliateNumber" placeholder="Affiliate No."/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
-            <label v-if="store.planInfo.division.length">Division</label>           
-            <input type="text" v-model="division" placeholder="Division"/>
+            <label v-if="store.originPlanInfo.division.length">Division</label>           
+            <input type="text" v-model="OriginPlanDivision" placeholder="Division"/>
           </div>       
         </div>
         <div id="originPlan__form--personalInfo" class="multipleInputWrap">
@@ -84,26 +84,106 @@ export default {
     store(){
       return this.$store.state.store.state;
     },
-    planSponsor: {
+    originPlanSponsor: {
       get(){
-        return this.store.planInfo.sponsor
+        return this.store.originPlanInfo.sponsor
       },
       set(value){
-        this.handlePlanSponsor(value);
+        this.handleOriginPlanSponsor(value);
       }
     },
-    planName: {
+    originPlanName: {
       get(){
-        return this.store.planInfo.name
+        return this.store.originPlanInfo.name
       },
       set(value){
-        this.handlePlanName(value);
+        this.handleOriginPlanName(value);
+      }
+    },
+    originPlanAccountNumber: {
+      get(){
+        return this.store.originPlanInfo.accountNumber
+      },
+      set(value){
+        this.handleOriginPlanAccountNumber(value);
+      }
+    },
+    originPlanAffiliateNumber: {
+      get(){
+        return this.store.originPlanInfo.affiliateNumber
+      },
+      set(value){
+        this.handleOriginPlanAffiliateNumber(value);
+      }
+    },
+    originPlanDivision: {
+      get(){
+        return this.store.originPlanInfo.division
+      },
+      set(value){
+        this.handleOriginPlanDivision(value);
+      }
+    },
+    mailingAddress: {
+      get(){
+        return this.store.mailingAddress
+      },
+      set(value){
+        this.handleMailingAddress(value);
+      }
+    },
+    mailingAddress2: {
+      get(){
+        return this.store.mailingAddress2
+      },
+      set(value){
+        this.handleMailingAddress2(value);
+      }
+    },
+    city: {
+      get(){
+        return this.store.city
+      },
+      set(value){
+        this.handleCity(value);
+      }
+    },
+    state: {
+      get(){
+        return this.store.state
+      },
+      set(value){
+        this.handleState(value);
+      }
+    },
+    zipCode: {
+      get(){
+        return this.store.zipCode
+      },
+      set(value){
+        this.handleZipCode(value);
+      }
+    },
+    phoneNumber: {
+      get(){
+        return this.store.phoneNumber
+      },
+      set(value){
+        this.handlePhoneNumber(value);
+      }
+    },
+    email: {
+      get(){
+        return this.store.email
+      },
+      set(value){
+        this.handleEmail(value);
       }
     }
   },
   methods: {
     ...mapActions(
-      'module', ['handlePlanSponsor', 'handlePlanName']
+      'module', ['handleOriginPlanSponsor', 'handleOriginPlanName', 'handleOriginPlanAccountNumber', 'handleOriginPlanAffiliateNumber', 'handleOriginPlanDivision', 'handleMailingAddress', 'handleMailingAddress2', 'handleCity', 'handleState', 'handleZipCode', 'handlePhoneNumber', 'handleEmail']
     ),
   }
 }

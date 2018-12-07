@@ -19,7 +19,7 @@ import { mapActions } from 'vuex';
 
 export default {
   props: {
-    progress: Number,
+    progress: String,
   },
   components: {
   },

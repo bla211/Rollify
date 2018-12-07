@@ -7,7 +7,14 @@ export default{
     emailConfirm: '',
     password: '',
     passwordConfirm: '',
-    planInfo: {
+    originPlanInfo: {
+        sponsor: '',
+        name: '',
+        accountNumber: '',
+        affiliateNumber: '',
+        division: ''
+    },
+    destinationPlanInfo: {
         sponsor: '',
         name: '',
         accountNumber: '',

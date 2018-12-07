@@ -5,6 +5,7 @@ import CreateAccount from './views/CreateAccount.vue'
 import PersonalData from './views/PersonalData.vue'
 import OriginPlan from './views/OriginPlan.vue'
 import SearchDestinationPlan from './views/SearchDestinationPlan.vue'
+import ConfirmDestinationPlan from './views/ConfirmDestinationPlan.vue'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/search-destination-plan',
       name: 'search-destination-plan',
       component: SearchDestinationPlan
+    },
+    {
+      path: '/confirm-destination-plan',
+      name: 'confirm-destination-plan',
+      component: ConfirmDestinationPlan
     },
   ]
 })
