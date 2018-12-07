@@ -41,6 +41,9 @@ export default{
     UPDATE_PHONE_NUMBER: (state, payload) => {
         state.phoneNumber = payload;
     },
+    UPDATE_SOCIAL_SECURITY_NUMBER: (state, payload) => {
+        state.socialSecurityNumber = payload;
+    },
     UPDATE_ORIGIN_PLAN_SPONSOR: (state, payload) => {
         state.originPlanInfo.sponsor = payload;
     },

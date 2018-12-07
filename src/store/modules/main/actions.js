@@ -43,6 +43,9 @@ export default{
     handlePhoneNumber: (context, payload) => {
         context.commit('UPDATE_PHONE_NUMBER', payload);
     },
+    handleSocialSecurityNumber: (context, payload) => {
+        context.commit('UPDATE_SOCIAL_SECURITY_NUMBER', payload);
+    },
     handleOriginPlanSponsor: (context, payload) => {
         context.commit('UPDATE_ORIGIN_PLAN_SPONSOR', payload);
     },

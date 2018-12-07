@@ -15,25 +15,29 @@
           </div>
           <div class="inputLabelWrapper thirdWidth">
             <label v-if="store.originPlanInfo.accountNumber.length">Plan Account No.</label>           
-            <input type="text" v-model="OriginPlanAccountNumber" placeholder="Plan Account No."/>
+            <input type="text" v-model="originPlanAccountNumber" placeholder="Plan Account No."/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
             <label v-if="store.originPlanInfo.affiliateNumber.length">Affiliate No.</label>           
-            <input type="text" v-model="OriginPlanAffiliateNumber" placeholder="Affiliate No."/>
+            <input type="text" v-model="originPlanAffiliateNumber" placeholder="Affiliate No."/>
           </div>
           <div class="inputLabelWrapper thirdWidth">
             <label v-if="store.originPlanInfo.division.length">Division</label>           
-            <input type="text" v-model="OriginPlanDivision" placeholder="Division"/>
+            <input type="text" v-model="originPlanDivision" placeholder="Division"/>
           </div>       
         </div>
         <div id="originPlan__form--personalInfo" class="multipleInputWrap">
           <div class="inputLabelWrapper thirdWidth">
             <label v-if="store.socialSecurityNumber.length">Social Security No.</label>           
-            <input type="text" v-model="socialSecurity" placeholder="Social Security No."/>
+            <input type="text" v-model="socialSecurityNumber" placeholder="Social Security No."/>
           </div>
-          <div class="inputLabelWrapper twoThirdsWidth">
-            <label v-if="false">First and Last Name</label>           
-            <input type="text" v-model="firstAndLast" placeholder="First and Last Name"/>
+          <div class="inputLabelWrapper thirdWidth">
+            <label v-if="store.firstName.length">First Name</label>           
+            <input type="text" v-model="firstName" placeholder="First Name"/>
+          </div>
+          <div class="inputLabelWrapper thirdWidth">
+            <label v-if="store.lastName.length">Last Name</label>           
+            <input type="text" v-model="lastName" placeholder="Last Name"/>
           </div>
           <div class="inputLabelWrapper halfWidth">
             <label v-if="store.mailingAddress.length">Mailing Address</label>           
@@ -179,11 +183,35 @@ export default {
       set(value){
         this.handleEmail(value);
       }
-    }
+    },
+    socialSecurityNumber: {
+      get(){
+        return this.store.socialSecurityNumber
+      },
+      set(value){
+        this.handleSocialSecurityNumber(value);
+      }
+    },
+    firstName: {
+      get(){
+        return this.store.firstName
+      },
+      set(value){
+        this.handleFirstName(value);
+      }
+    },
+    lastName: {
+      get(){
+        return this.store.lastName
+      },
+      set(value){
+        this.handleLastName(value);
+      }
+    },
   },
   methods: {
     ...mapActions(
-      'module', ['handleOriginPlanSponsor', 'handleOriginPlanName', 'handleOriginPlanAccountNumber', 'handleOriginPlanAffiliateNumber', 'handleOriginPlanDivision', 'handleMailingAddress', 'handleMailingAddress2', 'handleCity', 'handleState', 'handleZipCode', 'handlePhoneNumber', 'handleEmail']
+      'module', ['handleOriginPlanSponsor', 'handleOriginPlanName', 'handleOriginPlanAccountNumber', 'handleOriginPlanAffiliateNumber', 'handleOriginPlanDivision', 'handleMailingAddress', 'handleMailingAddress2', 'handleCity', 'handleState', 'handleZipCode', 'handlePhoneNumber', 'handleEmail', 'handleSocialSecurityNumber', 'handleFirstName', 'handleLastName']
     ),
   }
 }
