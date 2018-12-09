@@ -6,6 +6,9 @@ import PersonalData from './views/PersonalData.vue'
 import ConfirmOriginPlan from './views/ConfirmOriginPlan.vue'
 import SearchDestinationPlan from './views/SearchDestinationPlan.vue'
 import ConfirmDestinationPlan from './views/ConfirmDestinationPlan.vue'
+import SignOff from './views/SignOff.vue'
+import Success from './views/Success.vue'
+import Dashboard from './views/Dashboard.vue'
 
 Vue.use(Router)
 
@@ -41,6 +44,21 @@ export default new Router({
       path: '/confirm-destination-plan',
       name: 'confirm-destination-plan',
       component: ConfirmDestinationPlan
+    },
+    {
+      path: '/sign-off',
+      name: 'sign-off',
+      component: SignOff
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: Success
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard
     },
   ]
 })
