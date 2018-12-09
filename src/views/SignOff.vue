@@ -10,17 +10,19 @@
         <label>DocuSign</label> 
       </div>
       <div id="signOff__sign--disclaimers">
-        <div class="disclaimer-wrap">
-          <input type="checkbox" :checked="true"/>
-          <label>Terms and Conditions agreement</label>
-        </div>
-        <div class="disclaimer-wrap">
-          <input type="checkbox" :checked="true"/>
-          <label>Agree to grant Power of Attorney to Rollify</label>
-        </div>
-        <div class="disclaimer-wrap">
-          <input type="checkbox" :checked="true"/>
-          <label>Send me updates when funds are transferred</label>
+        <div id="disclaimers">
+          <div class="disclaimer-wrap">
+            <input type="checkbox" :checked="true"/>
+            <label>Terms and Conditions agreement</label>
+          </div>
+          <div class="disclaimer-wrap">
+            <input type="checkbox" :checked="true"/>
+            <label>Agree to grant Power of Attorney to Rollify</label>
+          </div>
+          <div class="disclaimer-wrap">
+            <input type="checkbox" :checked="true"/>
+            <label>Send me updates when funds are transferred</label>
+          </div>
         </div>
       </div>     
       <router-link to="success"><button>Complete Transfer</button></router-link>
@@ -121,11 +123,17 @@ export default {
 }
 #signOff__sign--disclaimers{
   width: 100%;
-  max-width: 600px;
   display: flex;
   flex-flow:row wrap;
-  justify-content: flex-start;
-  margin: 20px 0 0 0; 
+  justify-content: center;
+  margin: 20px 0 0 0;
+  #disclaimers{
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: flex-start;
+  }
   .disclaimer-wrap{
     width: 100%;
     display: flex;
