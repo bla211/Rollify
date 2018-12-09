@@ -253,7 +253,7 @@ export default {
     flex-flow:row wrap;
     justify-content: center;
     #originPlan__form--personalInfo{
-      margin-top: 30px;
+      margin: 30px 0 0 0;
     }
     .inputLabelWrapper{
       position: relative;

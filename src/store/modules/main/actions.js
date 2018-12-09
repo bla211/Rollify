@@ -75,5 +75,26 @@ export default{
     },
     handleDestinationPlanDivision: (context, payload) => {
         context.commit('UPDATE_DESTINATION_PLAN_DIVISION', payload);
+    },
+    handleDestinationDropdown: (context, payload) => {
+        context.commit('UPDATE_DESTINATION_DROPDOWN', payload);
+    },
+    handleDropdownSelect: (context, payload) => {
+        switch(payload[0]){
+            case 0:
+                context.commit('UPDATE_REASON_FOR_ROLLOVER', payload[1]);
+                break;
+            case 1:
+                context.commit('UPDATE_TYPE_OF_ROLLOVER', payload[1]);
+                break;
+            case 2:
+                context.commit('UPDATE_GET_FUNDS', payload[1]);
+                break;
+            case 3:
+                context.commit('UPDATE_FUND_TRANSFER', payload[1]);
+                break;
+        }
+
+        context.commit('UPDATE_DESTINATION_DROPDOWN', payload[0]);
     }
 }

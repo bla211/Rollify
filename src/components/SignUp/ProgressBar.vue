@@ -1,11 +1,11 @@
 <template>
   <div id="progressBar">
     <div id="progressBar__bar">
-      <router-link to="origin-plan"><div :class="['progressBar__bar--dot', (progress > -1) ? 'active' : '']"></div></router-link>
+      <router-link to="confirm-origin-plan"><div :class="['progressBar__bar--dot', (progress > -1) ? 'active' : '']"></div></router-link>
       <div :class="['progressBar__bar--line', (progress > 0) ? 'active' : '']"></div>
-      <div :class="['progressBar__bar--dot', (progress > 0) ? 'active' : '']"></div>
+      <router-link to="search-destination-plan"><div :class="['progressBar__bar--dot', (progress > 0) ? 'active' : '']"></div></router-link>
       <div :class="['progressBar__bar--line', (progress > 1) ? 'active' : '']"></div>
-      <div :class="['progressBar__bar--dot', (progress > 1) ? 'active' : '']"></div>
+      <router-link to="confirm-destination-plan"><div :class="['progressBar__bar--dot', (progress > 1) ? 'active' : '']"></div></router-link>
       <div :class="['progressBar__bar--line', (progress > 2) ? 'active' : '']"></div>
       <div :class="['progressBar__bar--dot', (progress > 2) ? 'active' : '']"></div>
       <div :class="['progressBar__bar--line', (progress > 3) ? 'active' : '']"></div>

@@ -27,5 +27,14 @@ export default{
     city: '',
     state: '',
     zipCode: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    reasonForRollover: null,
+    reasonForRolloverOptions: ['Termination', 'Retirement', 'Age 59 1/2'],
+    typeOfRollover: null,
+    typeOfRolloverOptions: ['Traditional IRA', 'Taxable portion in traditional IRA and non-taxable Roth IRA', 'Rollover to an eligible retirement fund'],
+    getFunds: null,
+    getFundsOptions: ['Mail me a check', 'Direct deposit'],
+    fundTransfer: null,
+    fundTransferOptions: ['Check at my mail', 'Wire (Costs may apply)', 'Use Rollify'],
+    destinationDropdownOpen: null
 };

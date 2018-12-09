@@ -24,7 +24,7 @@ $med-blue: #1976d2;
     flex-flow:row wrap;
     justify-content: space-between;
     width: 100%;
-  }
+}
 .fullWidth{
     width: 100%;
 }
@@ -33,6 +33,9 @@ $med-blue: #1976d2;
 }
 .thirdWidth{
     width: 32%;
+}
+.quarterWidth{
+    width: 24%;
 }
 .twoThirdsWidth{
     width: 66%;

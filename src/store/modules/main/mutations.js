@@ -74,4 +74,24 @@ export default{
     UPDATE_DESTINATION_PLAN_DIVISION: (state, payload) => {
         state.destinationPlanInfo.division = payload;
     },
+    UPDATE_DESTINATION_DROPDOWN: (state, payload) => {
+        if(state.destinationDropdownOpen === payload){
+            state.destinationDropdownOpen = null;
+        }
+        else{
+            state.destinationDropdownOpen = payload;
+        }
+    },
+    UPDATE_REASON_FOR_ROLLOVER: (state, payload) => {
+        state.reasonForRollover = payload;
+    },
+    UPDATE_TYPE_OF_ROLLOVER: (state, payload) => {
+        state.typeOfRollover = payload;
+    },
+    UPDATE_GET_FUNDS: (state, payload) => {
+        state.getFunds = payload;
+    },
+    UPDATE_FUND_TRANSFER: (state, payload) => {
+        state.fundTransfer = payload;
+    },
 }
