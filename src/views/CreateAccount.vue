@@ -1,6 +1,35 @@
 <template>
-  <div>
-    Create Account
+  <div id="createAccount">
+    <h1>Move your funds easily, Join Rollify now!</h1>
+    <div id="createAccount__form">
+      <div id="createAccount__form--accessCodeCheck" v-if="store.hasAccessCode === null">
+        <div class="accessCodeToggle" @click="handleHasAccessCode(true)">
+          Claim Account with Access Code
+        </div>
+        <div class="accessCodeToggle" @click="handleHasAccessCode(false)">
+          Create New Account
+        </div>
+      </div>
+      <div id="form" v-if="store.hasAccessCode !== null">
+        <template v-if="store.hasAccessCode">
+          <div class="changeHasAccessCode" @click="handleHasAccessCode(false)">Dont have an access code? Click here to continue creating a new account.</div>
+          <input class="fullWidth" type="text" placeholder="Access Code" v-model="accessCode"/>
+        </template>
+        <template v-else>
+          <div class="changeHasAccessCode" @click="handleHasAccessCode(true)">Have an access code? Click here to continue with an access code.</div>
+        </template>
+        <div class="multipleInputWrap">
+          <input class="halfWidth" type="text" placeholder="First Name" v-model="firstName"/>
+          <input class="halfWidth" type="text" placeholder="Last Name" v-model="lastName"/>
+        </div>
+        <input class="fullWidth" type="text" placeholder="Email" v-model="email"/>
+        <input class="fullWidth" type="text" placeholder="Confirm Email" v-model="emailConfirm"/>
+        <input class="fullWidth" type="password" placeholder="Password" v-model="password"/>
+        <input class="fullWidth" type="password" placeholder="Confirm Password" v-model="passwordConfirm"/>
+        <div class="disclaimer">By proceeding, you agree with our Terms of Service &amp; Privacy Policy</div>
+        <router-link to="personal-data"><button>Sign Up</button></router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,10 +45,66 @@ export default {
     store(){
       return this.$store.state.store.state;
     },
+    accessCode: {
+      get(){
+        return this.store.accessCode
+      },
+      set(value){
+        this.handleAccessCode(value);
+      }
+    },
+    firstName: {
+      get(){
+        return this.store.firstName
+      },
+      set(value){
+        this.handleFirstName(value);
+      }
+    },
+    lastName: {
+      get(){
+        return this.store.lastName
+      },
+      set(value){
+        this.handleLastName(value);
+      }
+    },
+    email: {
+      get(){
+        return this.store.email
+      },
+      set(value){
+        this.handleEmail(value);
+      }
+    },
+    emailConfirm: {
+      get(){
+        return this.store.emailConfirm
+      },
+      set(value){
+        this.handleEmailConfirm(value);
+      }
+    },
+    password: {
+      get(){
+        return this.store.password
+      },
+      set(value){
+        this.handlePassword(value);
+      }
+    },
+    passwordConfirm: {
+      get(){
+        return this.store.passwordConfirm
+      },
+      set(value){
+        this.handlePasswordConfirm(value);
+      }
+    }
   },
   methods: {
     ...mapActions(
-      'module', []
+      'module', ['handleHasAccessCode', 'handleAccessCode', 'handleFirstName', 'handleLastName', 'handleEmail', 'handleEmailConfirm', 'handlePassword', 'handlePasswordConfirm']
     ),
   }
 }
@@ -28,17 +113,15 @@ export default {
 <style scoped lang="scss">
  @import "@/styles/app.scss";
 
-#login{
+ #createAccount{
   display: flex;
-  flex-flow:column wrap;
+  flex-flow:row wrap;
   justify-content: center;
   align-content: flex-start;
-  flex-direction: row;
   width: 100%;
-  height: 100vh;
   h1{
     flex-basis: 100%;
-    margin-top: 80px;
+    margin-top: 40px;
     text-align: center;
     font-family: Tahoma, sans-serif;
     font-size: 2.6rem;
@@ -46,83 +129,99 @@ export default {
     color: #888888;
   }
 }
-#login__modal{
-  width: 374px;
-  background: #CFD8DC;
-  margin-top: 40px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-}
-#login__modal--header{
-  height: 65px;
-  width: 100%;
-  background: #788B91;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 22px 14px;
-  .block{
-    height: 20px;
-    width: 20px;
-    background: #CFD8DC;
-  }
-  #avatar{
-    width: 65px;
-    height: 65px;
-    border-radius: 100%;
-    background: #FFFFFF;
-    top: 10px;
-    position: relative;
-  }
-}
-#login__modal--body{
-  width: 100%;
-  padding: 80px 14px 20px 14px;
-  display: flex;
-  flex-flow:column wrap;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row;
 
-  input{
+#createAccount__form{
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: center; 
+  font-family: $font-family;
+  #createAccount__form--accessCodeCheck{
     width: 100%;
-    @include appearance(none);
-    border: none;
-    padding: 10px 14px;
-    margin: 0 0 14px 0;
-    outline: none;
-    font-family: $font-family;
-    @include placeholder{
-      @include appearance(none);
-      font-family: $font-family;
-      font-size: 1.8rem;
-      line-height: 2.3rem;
-      color: #9DA6A9;
-      text-transform: lowercase;
+    max-width: 1100px;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-around; 
+    .accessCodeToggle{    
+      font-size: 2.4rem;
+      width: 40%;
+      padding: 0 20px;
+      height: 200px;
+      border-radius: 5px;
+      background: #F3F3F3;
+      color: #7B8D93;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-content: center;
+      text-align: center;
+      cursor: pointer;
+      &:hover{
+        color: #F3F3F3;
+        background: #7B8D93;
+      }
     }
-  }
-  button{
-    @include appearance(none);
-    border: none;
-    padding: 10px 14px;
-    margin: 30px 0 14px 0;
-    background: #7B8D93;
-    color: #FFFFFF;
-    padding: 10px 50px;
-    border-radius: 5px;
-    font-family: $font-family;
-    font-size: 1.4rem;
-  }
-  a{
+  } 
+  #form{
     width: 100%;
-    text-align: center;
-    font-size: 1.4rem;
-    font-family: $font-family;
-    color: #7B8D93;
+    max-width: 420px;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    .changeHasAccessCode{
+      font-size: 1.0rem;
+      margin: 0 0 6px 0;
+      cursor: pointer;
+      width: 100%;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .halfWidthWrapper{
+      display: flex;
+      flex-flow:row wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+    input{
+      @extend %input;
+    } 
+    .disclaimer{
+      width: 100%;
+      font-family: $font-family;
+      font-size: 1.3rem;
+      color: #7B8D93;
+      font-weight: 500;
+      margin: 30px 0 0 0;
+      text-align: center;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    a{
+      width: 100%;
+    }
+    button{
+      @include appearance(none);
+      border: none;
+      background: $rollify-blue;
+      color: #FFFFFF;
+      font-family: $font-family;
+      font-size: 1.3rem;
+      padding: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin: 20px 0 0 0;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 4px;
+      @include transition(opacity .1s ease-in-out);
+      &:hover{
+        opacity: .75;
+      }
+    }
   }
 }
 

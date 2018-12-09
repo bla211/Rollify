@@ -11,8 +11,8 @@
         </div>
       </div>
       <div id="login__modal--body">
-        <input type="text" placeholder="username"/> 
-        <input type="text" placeholder="password"/>
+        <input class="fullWidth" type="text" placeholder="username"/> 
+        <input class="fullWidth" type="text" placeholder="password"/>
         <button>Login</button> 
         <router-link to="create-account">Create Account</router-link >
       </div>
@@ -46,15 +46,13 @@ export default {
 
 #login{
   display: flex;
-  flex-flow:column wrap;
+  flex-flow:row wrap;
   justify-content: center;
   align-content: flex-start;
-  flex-direction: row;
   width: 100%;
-  height: 100vh;
   h1{
     flex-basis: 100%;
-    margin-top: 80px;
+    margin-top: 40px;
     text-align: center;
     font-family: Tahoma, sans-serif;
     font-size: 2.6rem;
@@ -63,9 +61,10 @@ export default {
   }
 }
 #login__modal{
-  width: 374px;
+  max-width: 374px;
+  width: 100%;
   background: #CFD8DC;
-  margin-top: 40px;
+  margin-top: 60px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -106,25 +105,12 @@ export default {
 
   input{
     width: 100%;
-    @include appearance(none);
-    border: none;
-    padding: 10px 14px;
-    margin: 0 0 14px 0;
-    outline: none;
-    font-family: $font-family;
-    @include placeholder{
-      @include appearance(none);
-      font-family: $font-family;
-      font-size: 1.8rem;
-      line-height: 2.3rem;
-      color: #9DA6A9;
-      text-transform: lowercase;
-    }
+    @extend %input;
   }
+
   button{
     @include appearance(none);
     border: none;
-    padding: 10px 14px;
     margin: 30px 0 14px 0;
     background: #7B8D93;
     color: #FFFFFF;
@@ -139,6 +125,11 @@ export default {
     font-size: 1.4rem;
     font-family: $font-family;
     color: #7B8D93;
+    text-decoration: none;
+    &:active{
+      color: #7B8D93;
+      text-decoration: none;
+    }
   }
 }
 
