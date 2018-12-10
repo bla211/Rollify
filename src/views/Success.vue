@@ -7,7 +7,6 @@
       </div>
     </div>
     <h1>Success!<br>Your fund transfer has started.<br>Login or subscribe to our notifications for status updates.</h1>
-    <router-link to="dashboard"><button>Dashboard</button></router-link>
   </div>
 </template>
 

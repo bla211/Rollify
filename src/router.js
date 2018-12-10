@@ -9,6 +9,7 @@ import ConfirmDestinationPlan from './views/ConfirmDestinationPlan.vue'
 import SignOff from './views/SignOff.vue'
 import Success from './views/Success.vue'
 import Dashboard from './views/Dashboard.vue'
+import Status from './views/Status.vue'
 
 Vue.use(Router)
 
@@ -60,5 +61,11 @@ export default new Router({
       name: 'dashboard',
       component: Dashboard
     },
+    {
+      path: '/status',
+      name: 'status',
+      component: Status
+    },
+    
   ]
 })

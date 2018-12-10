@@ -1,30 +1,26 @@
 <template>
-  <div id="dashboard">
+  <div id="status">
     <div id="sidebar">
     </div>
-    <div id="dashboard__tiles">
-      <div id="dashboard__tiles--wrapper">
-        <div class="tile">
-          Test
-        </div>
-        <div class="tile">
-          Test
-        </div>
-        <div class="tile">
-          Test
-        </div>
-      </div>
-    </div>
+    <ul id="status__list">
+      <li class="status__list--item" id="status__list--header">
+        <div class="value value-id">ID</div>
+        <div class="value value-action">Action</div>     
+        <div class="value value-daysActive">Days Active</div>
+      </li>   
+      <li class="status__list--item">
+        <div class="value value-id">5362</div>
+        <div class="value value-action">Awaiting transfer</div>     
+        <div class="value value-daysActive">4</div>
+      </li>   
+    </ul>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-
-import ProgressBar from '@/components/SignUp/ProgressBar.vue';
 export default {
   components: {
-    ProgressBar
   },
   created(){
   },
@@ -44,7 +40,7 @@ export default {
 <style scoped lang="scss">
  @import "@/styles/app.scss";
 
- #dashboard{
+ #status{
   display: flex;
   flex-flow:row wrap;
   justify-content: flex-start;
@@ -56,29 +52,32 @@ export default {
   height: 100vh;
   background: $grey-0;
 }
-#dashboard__tiles{
+#status__list{
   display: flex;
   flex-flow:row wrap;
   justify-content: flex-start;
   align-content: flex-start;
   flex-grow: 1;
-  padding: 20px;
 }
-#dashboard__tiles--wrapper{
-  display: flex;
-  flex-flow:row wrap;
-  justify-content: space-between;
-  align-content: flex-start;
-  align-items: flex-start;
+#status__list--header{
+  background: $grey-2;
+}
+.status__list--item{
   width: 100%;
-  .tile{
-    display: flex;
-    padding: 20px;
-    width: 32%;
-    background: $grey-0;
-    font-size: 1.4rem;
-    font-family: $font-family;
-    border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.6rem;
+  font-family: $font-family;
+  .value{
+    padding: 10px 20px;
+  }
+  .value-id{
+    flex-basis: 100px;
+  }
+  .value-action{
+    flex-basis: 200px;
+  }
+  .value-daysActive{
   }
 }
 a{
