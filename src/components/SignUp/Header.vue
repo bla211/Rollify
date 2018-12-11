@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div id="header">
+    <img id="logo" src="../../assets/Rollify_logo_Blue.png"/>
   </div>
 </template>
 
@@ -14,7 +15,7 @@ export default {
   computed: {
     store(){
       return this.$store.state.store.state;
-    },
+    }
   },
   methods: {
     ...mapActions(
@@ -23,3 +24,16 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+ @import "@/styles/app.scss";
+  #header{
+    width: 100%;
+    padding: 10px; 
+    background: #F3F3F3;
+  }
+  #logo{
+    width: 100px;
+  }
+
+</style>
