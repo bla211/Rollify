@@ -1,0 +1,60 @@
+$rollify-blue: #0B9EDA;
+
+$grey-0: #FAFAFA;
+$grey-1: #F5F5F5;
+$grey-2: #EEEEEE;
+$grey-3: #E0E0E0;
+$grey-4: #BDBDBD;
+$grey-5: #9E9E9E;
+$grey-6: #757575;
+$grey-7: #616161;
+$grey-8: #424242;
+$grey-9: #212121;
+
+$font-family: "Roboto", sans-serif;
+$lightest-blue: #BBDEFB;
+$light-blue: #64B5F6;
+$med-blue: #1976d2;
+
+@import 'settings';
+
+
+.multipleInputWrap{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.fullWidth{
+    width: 100%;
+}
+.halfWidth{
+    width: 49%;
+}
+.thirdWidth{
+    width: 32%;
+}
+.quarterWidth{
+    width: 24%;
+}
+.twoThirdsWidth{
+    width: 66%;
+}
+%input{
+    @include appearance(none);
+    border: none;
+    padding: 10px 14px;
+    margin: 0 0 14px 0;
+    outline: none;
+    font-family: $font-family;
+    background: #F3F3F3;
+    border-radius: 4px;
+    @include placeholder{
+        @include appearance(none);
+        font-family: $font-family;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #7B8D93;
+        opacity: .5;
+    }
+}
