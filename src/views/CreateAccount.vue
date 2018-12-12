@@ -30,6 +30,9 @@
         <router-link to="personal-data"><button>Sign Up</button></router-link>
       </div>
     </div>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 
@@ -223,6 +226,9 @@ export default {
       }
     }
   }
+}
+#contact-support{
+    bottom: 10px;
 }
 
 </style>

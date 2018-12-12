@@ -17,6 +17,9 @@
         <router-link to="create-account">Create Account</router-link >
       </div>
     </div>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 
@@ -98,10 +101,9 @@ export default {
   width: 100%;
   padding: 80px 14px 20px 14px;
   display: flex;
-  flex-flow:column wrap;
+  flex-flow:row wrap;
   justify-content: center;
   align-content: center;
-  flex-direction: row;
 
   input{
     width: 100%;
@@ -118,6 +120,11 @@ export default {
     border-radius: 5px;
     font-family: $font-family;
     font-size: 1.4rem;
+    cursor: pointer;
+     @include transition(opacity .2s ease-in-out);
+    &:hover{
+      opacity: .75;
+    }
   }
   a{
     width: 100%;
@@ -131,6 +138,9 @@ export default {
       text-decoration: none;
     }
   }
+}
+#contact-support{
+    bottom: 10px;
 }
 
 </style>

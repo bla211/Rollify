@@ -24,6 +24,9 @@
         <router-link to="confirm-destination-plan"><button>Confirm Destination Plan</button></router-link>
       </div>
     </div>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 

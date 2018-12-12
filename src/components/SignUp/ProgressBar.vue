@@ -7,9 +7,9 @@
       <div :class="['progressBar__bar--line', (progress > 1) ? 'active' : '']"></div>
       <router-link to="confirm-destination-plan"><div :class="['progressBar__bar--dot', (progress > 1) ? 'active' : '']"></div></router-link>
       <div :class="['progressBar__bar--line', (progress > 2) ? 'active' : '']"></div>
-      <div :class="['progressBar__bar--dot', (progress > 2) ? 'active' : '']"></div>
+      <router-link to="sign-off"><div :class="['progressBar__bar--dot', (progress > 2) ? 'active' : '']"></div></router-link>
       <div :class="['progressBar__bar--line', (progress > 3) ? 'active' : '']"></div>
-      <div :class="['progressBar__bar--dot', (progress > 3) ? 'active' : '']"></div>
+      <router-link to="success"><div :class="['progressBar__bar--dot', (progress > 3) ? 'active' : '']"></div></router-link>
     </div>
   </div>
 </template>

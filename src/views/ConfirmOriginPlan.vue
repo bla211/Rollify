@@ -71,6 +71,9 @@
         <router-link to="search-destination-plan"><button>Select Destination Plan</button></router-link>
       </div>
     </div>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 

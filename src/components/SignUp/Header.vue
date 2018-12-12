@@ -29,7 +29,7 @@ export default {
  @import "@/styles/app.scss";
   #header{
     width: 100%;
-    padding: 10px; 
+    padding: 10px 20px; 
     background: #F3F3F3;
   }
   #logo{

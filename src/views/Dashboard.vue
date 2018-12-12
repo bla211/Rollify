@@ -1,11 +1,18 @@
 <template>
   <div id="dashboard">
     <div id="sidebar">
+      <div class="sidebar__tile">
+        Dashboard
+      </div>
+      <div class="sidebar__tile">
+        Alerts
+      </div>
+      <div class="sidebar__tile" id="settings-tile">
+        Settings
+      </div>
     </div>
     <div id="dashboard__tiles">
-      <div id="dashboard__tiles--wrapper">
-        <div class="tile" id="average-time">        
-        </div>
+      <div id="dashboard__tiles--wrapper">   
         <div class="tile" id="average-time">        
           <div class="tile-value">12 Days</div>
           <div class="tile-title">Average Transfer</div>
@@ -17,6 +24,8 @@
         <div class="tile" id="advisory">
           <div class="tile-value">15 Need</div>
           <div class="tile-title">Advisory Services</div>
+        </div>
+        <div class="tile" id="average-time">        
         </div>
       </div>
 
@@ -147,6 +156,21 @@ export default {
   width: 200px;
   height: calc(100vh - 59px);
   background: $grey-0;
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  .sidebar__tile{
+    padding: 20px;
+    width: 100%;
+    font-size: 1.8rem;
+    font-family: $font-family;
+    cursor: pointer;
+    @include transition(background .2s ease-in-out);
+    &:hover{
+      background: $grey-3;
+    }
+  }
 }
 #dashboard__tiles{
   display: flex;
@@ -182,6 +206,7 @@ export default {
     font-size: 1.4rem;
     font-family: $font-family;
     border-radius: 4px;
+    cursor: pointer;
     .tile-title{
       font-size: 1.2rem;
       font-weight: 500;
@@ -226,8 +251,13 @@ export default {
   flex-direction: row;
   font-size: 1.6rem;
   font-family: $font-family;
+  cursor: pointer;
+  @include transition(background .2s ease-in-out);
   &:nth-child(odd){
     background: $grey-1;
+  }
+  &:hover{
+    background: $grey-4;
   }
   .value{
     padding: 10px 20px;

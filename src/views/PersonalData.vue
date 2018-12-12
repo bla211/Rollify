@@ -20,6 +20,9 @@
         <router-link to="confirm-origin-plan"><button>Continue</button></router-link>
       </div>
     </div>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 

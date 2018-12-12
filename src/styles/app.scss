@@ -58,3 +58,19 @@ $med-blue: #1976d2;
         opacity: .5;
     }
 }
+
+#contact-support{
+    width: 80px;
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    opacity: .5;
+    cursor: pointer;
+    @include transition(opacity .1s ease-in-out);
+    &:hover{
+        opacity: 1;
+    }
+    img{
+        width: 100%;
+    }
+}

@@ -27,6 +27,9 @@
       </div>     
       <router-link to="success"><button>Complete Transfer</button></router-link>
     </div>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 

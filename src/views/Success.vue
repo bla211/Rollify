@@ -7,6 +7,9 @@
       </div>
     </div>
     <h1>Success!<br>Your fund transfer has started.<br>Login or subscribe to our notifications for status updates.</h1>
+    <div id="contact-support">
+      <img id="logo" src="../assets/support-logo.png"/>
+    </div>
   </div>
 </template>
 
@@ -110,6 +113,9 @@ button{
   &:hover{
     opacity: .75;
   }
+}
+#contact-support{
+    bottom: 10px;
 }
 
 </style>
